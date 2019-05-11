@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  api-proxy-service:
+    build: .
+    ports:
+      - 8081:8081
+      - 9229:9229
+    restart: always
+    environment:
+      - NODE_ENV=production
+    command: npm run start:prod
